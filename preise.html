@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Preise | GH-PC Solutions</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           PREISSEITE
+           ========================================= */
+
+        .price-page {
+            min-height: 100vh;
+        }
+
+        .price-solutions {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 90px 00px 50px;
+        }
+
+        .price-solutions h1 {
+            margin-bottom: 20px;
+        }
+
+        .price-solutions .intro {
+            max-width: 700px;
+            font-size: 1.08rem;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+
+        /* Preis-Karten */
+
+        .price-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 24px 80px;
+
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .price-card {
+            padding: 28px;
+            border-radius: 18px;
+
+            border: 1px solid rgba(70, 130, 220, 0.16);
+            background: rgba(255, 255, 255, 0.035);
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(70, 130, 220, 0.35);
+        }
+
+        .price-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 14px;
+        }
+
+        .price-card h2 {
+            margin: 0;
+            font-size: 1.15rem;
+        }
+
+        .price {
+            white-space: nowrap;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        .price-card p {
+            margin: 0;
+            line-height: 1.65;
+            opacity: 0.75;
+        }
+
+        .price-card small {
+            display: block;
+            margin-top: 12px;
+            line-height: 1.5;
+            opacity: 0.6;
+        }
+
+
+        /* Hervorgehobene Karte */
+
+        .price-card.featured {
+            border-color: rgba(70, 130, 220, 0.4);
+            background: rgba(70, 130, 220, 0.07);
+        }
+
+
+        /* Hinweise */
+
+        .price-info {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        .price-info-box {
+            padding: 30px;
+            border-radius: 18px;
+
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(70, 130, 220, 0.16);
+        }
+
+        .price-info-box h2 {
+            margin-top: 0;
+        }
+
+        .price-info-box p {
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .price-info-box ul {
+            margin: 20px 0;
+            padding-left: 22px;
+        }
+
+        .price-info-box li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+
+        /* CTA */
+
+        .price-cta {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 100px;
+            text-align: center;
+        }
+
+        .price-cta h2 {
+            margin-bottom: 12px;
+        }
+
+        .price-cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            line-height: 1.7;
+            opacity: 0.75;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .price-solutions {
+                padding-top: 60px;
+            }
+
+            .price-grid {
+                grid-template-columns: 1fr;
+                padding-bottom: 60px;
+            }
+
+            .price-card-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .price-info,
+            .price-cta {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body class="legal-page price-page">
+
+    <!-- Navigation -->
+
+    <header class="nav">
+
+        <a class="brand" href="index.html"><i class="brand-dot"></i>
+            GH-PC<span>Solutions</span>
+        </a>
+
+        <a class="nav-cta" href="index.html">
+            ← Zur Website
+        </a>
+
+    </header>
+
+
+    <!-- Einleitung -->
+
+    <main>
+
+        <section class="price-solutions">
+
+            <div class="eyebrow">
+                Preise
+            </div>
+
+            <h1>
+                Faire Preise.<br>
+                <em>Keine Überraschungen.</em>
+            </h1>
+
+            <p class="intro">
+                Du sollst bereits vor Beginn der Arbeiten wissen,
+                in welcher Größenordnung sich die Kosten bewegen.
+                Deshalb findest du hier meine Preise für typische
+                PC-Service-Leistungen.
+            </p>
+
+        </section>
+
+
+        <!-- Preisübersicht -->
+
+        <section class="price-grid">
+
+
+            <!-- Diagnose -->
+
+            <article class="price-card featured">
+
+                <div class="price-card-header">
+
+                    <h2>
+                        Fehlerdiagnose & Analyse
+                    </h2>
+
+                    <div class="price">
+                        25 €
+                    </div>
+
+                </div>
+
+                <p>
+                    Untersuchung deines PCs auf die Ursache eines
+                    Hardware- oder Softwareproblems.
+                </p>
+
+                <small>
+                    Die Diagnose beinhaltet eine erste Einschätzung
+                    und die gezielte Fehlersuche.
+                </small>
+
+            </article>
+
+
+            <!-- Reinigung -->
+
+            <article class="price-card">
+
+                <div class="price-card-header">
+
+                    <h2>
+                        PC-Reinigung
+                    </h2>
+
+                    <div class="price">
+                        29 €
+                    </div>
+
+                </div>
+
+                <p>
+                    Reinigung von Gehäuse, Lüftern und zugänglichen
+                    Komponenten von Staub und Verschmutzungen.
+                </p>
+
+                <small>
+                    Bei stark verschmutzten Systemen kann der Aufwand
+                    höher ausfallen.
+                </small>
+
+            </article>
+
+
+            <!-- SSD / HDD -->
+
+            <article class="price-card">
+
+                <div class="price-card-header">
+
+                    <h2>
+                        SSD / HDD Einbau
+                    </h2>
+
+                    <div class="price">
+                        ab 29 €
+                    </div>
+
+                </div>
+
+                <p>
+                    Einbau und Anschluss einer neuen SSD oder
+                    Festplatte inklusive grundlegender Einrichtung.
+                </p>
+
+                <small>
+                    Hardwarekosten sind nicht enthalten und werden
+                    vorab mit dir abgestimmt.
+                </small>
+
+            </article>
+
+
+            <!-- Datenübertragung -->
+
+            <article class="price-card">
+
+                <div class="price-card-header">
+
+                    <h2>
+                        Datenübertragung
+                    </h2>
+
+                    <div class="price">
+                        ab 49 €
+                    </div>
+
+                </div>
+
+                <p>
+                    Übertragung persönlicher Daten von einem alten
+                    Datenträger oder PC auf ein neues Laufwerk bzw.
+                    System.
+                </p>
+
+                <small>
+                    Der genaue Preis richtet sich insbesondere nach
+                    Datenmenge und technischem Aufwand.
+                </small>
+
+            </article>
+
+
+            <!-- Windows -->
+
+            <article class="price-card">
+
+                <div class="price-card-header">
+
+                    <h2>
+                        Windows- und Linux Installation
+                    </h2>
+
+                    <div class="price">
+                        49 €
+                    </div>
+
+                </div>
+
+                <p>
+                    Installation von Windows inklusive grundlegender
+                    Einrichtung, Treibern und wichtigen Updates.
+                </p>
+
+                <small>
+                    Eine Windows-Lizenz ist nicht im Preis enthalten.
+                </small>
+
+            </article>
+
+
+            <!-- Reparatur -->
+
+            <article class="price-card">
+
+                <div class="price-card-header">
+
+                    <h2>
+                        PC-Reparatur
+                    </h2>
+
+                    <div class="price">
+                        ab 49 €
+                    </div>
+
+                </div>
+
+                <p>
+                    Behebung erkannter Hardware- oder Softwareprobleme
+                    nach vorheriger Diagnose.
+                </p>
+
+                <small>
+                    Der endgültige Preis hängt vom tatsächlichen
+                    Arbeitsaufwand und eventuell benötigten Ersatzteilen ab.
+                </small>
+
+            </article>
+
+
+            <!-- Optimierung -->
+
+            <article class="price-card">
+
+                <div class="price-card-header">
+
+                    <h2>
+                        Systemoptimierung
+                    </h2>
+
+                    <div class="price">
+                        39 €
+                    </div>
+
+                </div>
+
+                <p>
+                    Aufräumen und Optimieren eines bestehenden
+                    Windows-Systems sowie Überprüfung wichtiger
+                    Einstellungen.
+                </p>
+
+                <small>
+                    Keine Garantie auf Leistungssteigerungen bei
+                    technisch begrenzter Hardware.
+                </small>
+
+            </article>
+
+
+            <!-- Individuelle Hilfe -->
+
+            <article class="price-card">
+
+                <div class="price-card-header">
+
+                    <h2>
+                        Individuelle PC-Hilfe
+                    </h2>
+
+                    <div class="price">
+                        39 €/Std.
+                    </div>
+
+                </div>
+
+                <p>
+                    Unterstützung bei individuellen Fragen,
+                    Einstellungen, Software oder sonstigen
+                    PC-Problemen.
+                </p>
+
+                <small>
+                    Abrechnung nach tatsächlichem Arbeitsaufwand.
+                </small>
+
+            </article>
+
+        
+            <!-- PC Zusammenbau -->
+
+            <article class="price-card">
+
+                <div class="price-card-header">
+
+                    <h2>
+                        PC-Konfiguration und Zusammenbau
+                    </h2>
+
+                    <div class="price">
+                        89 €
+                    </div>
+
+                </div>
+
+                <p>
+                    Hilfe beim Konfigurieren aller PC-Komponenten und 
+                    Zusammenbau dessen.
+                </p>
+
+                <small>
+                    Der Erwerb und die Installation des Betriebssystems ist nicht im
+                    Preis enthalten, kann allerdings nach Absprache dazu gebucht werden.
+                </small>
+
+            </article>
+
+
+    </section>
+
+
+        <!-- Wichtige Informationen -->
+
+        <section class="price-info">
+
+            <div class="price-info-box">
+
+                <h2>
+                    Wichtige Informationen
+                </h2>
+
+                <p>
+                    Die angegebenen Preise beziehen sich grundsätzlich
+                    auf die Arbeitsleistung. Ersatzteile, Hardware,
+                    Softwarelizenzen und andere benötigte Materialien
+                    sind, sofern nicht ausdrücklich anders angegeben,
+                    nicht enthalten.
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        <strong>Keine Überraschungen:</strong>
+                        Sollte sich während der Arbeit herausstellen,
+                        dass der Aufwand deutlich höher ist als zunächst
+                        erwartet, bespreche ich das vorher mit dir.
+                    </li>
+
+                    <li>
+                        <strong>Transparente Kosten:</strong>
+                        Du erfährst vor umfangreicheren Arbeiten,
+                        welche Kosten voraussichtlich entstehen.
+                    </li>
+
+                    <li>
+                        <strong>Ersatzteile:</strong>
+                        Benötigte Komponenten werden nicht einfach
+                        ohne Rücksprache bestellt oder eingebaut.
+                    </li>
+
+                    <li>
+                        <strong>Individuelle Fälle:</strong>
+                        Nicht jedes Problem lässt sich sinnvoll mit
+                        einem festen Preis abbilden. Bei komplexeren
+                        Arbeiten erhältst du deshalb vorher eine
+                        Einschätzung des voraussichtlichen Aufwands.
+                    </li>
+
+                    <li>
+                        <strong>Diagnose:</strong>
+                        Die Diagnosepauschale deckt die erste
+                        Fehlersuche und Einschätzung ab. Eine
+                        anschließende Reparatur wird separat
+                        besprochen.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- Anfrage -->
+
+        <section class="price-cta">
+
+            <h2>
+                Nicht sicher, was dein Problem kostet?
+            </h2>
+
+            <p>
+                Beschreibe kurz, was mit deinem PC passiert ist.
+                Ich kann dir anschließend eine Einschätzung geben,
+                welcher Aufwand ungefähr zu erwarten ist.
+            </p>
+
+            <a
+                class="button primary"
+                href="formular.html"
+            >
+                Online-Anfrage starten →
+            </a>
+
+        </section>
+
+
+        <!-- Zurück -->
+
+        <section class="legal">
+
+            <p>
+                <a href="index.html">
+                    ← Zurück zur Startseite
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-brand">
+            GH-PC<span>Solutions</span>
+        </div>
+
+        <div>PC-Reparatur · Service · Hilfe</div>
+
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+
+        <div>
+            © 2026 Georg Heinz. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>
