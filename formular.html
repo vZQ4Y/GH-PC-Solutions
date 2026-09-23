@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Online Formular | GH-PC Solutions</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="nav">
+        <a class="brand" href="index.html"><i class="brand-dot"></i>
+            GH-PC<span>Solutions</span>
+        </a>
+
+        <a class="nav-cta" href="index.html">
+            ← Zur Website
+        </a>
+    </header>
+
+
+    <main class="formwrap">
+
+        <div class="eyebrow">
+            Online Anfrage
+        </div>
+
+        <h1>
+            Erzähl mir kurz,<br>
+            <em>was los ist.</em>
+        </h1>
+
+        <p class="intro">
+            Die Angaben werden für deine Anfrage in eine E-Mail übernommen.
+            Mit * markierte Felder sind erforderlich.
+        </p>
+
+
+        <form id="f">
+
+            <div class="formgrid">
+
+                <label>
+                    Name *
+                    <input
+                        id="n"
+                        required
+                        placeholder="Dein Name"
+                    >
+                </label>
+
+
+                <label>
+                    E-Mail *
+                    <input
+                        id="e"
+                        type="email"
+                        required
+                        placeholder="deine@email.de"
+                    >
+                </label>
+
+
+                <label>
+                    Telefon
+                    <span>(optional)</span>
+
+                    <input
+                        id="t"
+                        placeholder="z. B. 0176 12345678"
+                    >
+                </label>
+
+
+                <label>
+                    PC / Gerät
+                    <span>(optional)</span>
+
+                    <input
+                        id="d"
+                        placeholder="z. B. Desktop-PC, Laptop"
+                    >
+                </label>
+
+            </div>
+
+
+            <label>
+                Was ist passiert? *
+
+                <textarea
+                    id="p"
+                    required
+                    placeholder="Beschreibe kurz das Problem oder dein Anliegen …"
+                ></textarea>
+            </label>
+
+
+            <label>
+                Weitere Angaben
+                <span>(optional)</span>
+
+                <textarea
+                    id="x"
+                    placeholder="Betriebssystem, Alter des PCs, bereits ausprobierte Lösungen …"
+                ></textarea>
+            </label>
+
+<!--
+            <label class="upload">
+                Bilder
+                <span>(optional)</span>
+
+                <input
+                    id="i"
+                    type="file"
+                    accept="image/*"
+                    multiple
+                >
+
+                <small>
+                    Mehrere Bilder sind auswählbar. Die rein statische Demo
+                    kann Dateien nicht automatisch an eine E-Mail anhängen;
+                    für echte Anhänge braucht die Live-Version einen kleinen
+                    Server-/Formulardienst.
+                </small>
+            </label>
+-->
+
+            <label class="check">
+
+                <input
+                    id="a"
+                    type="checkbox"
+                    required
+                >
+
+                <span>
+                    Ich habe die
+                    <a href="agb.html" target="_blank">AGB</a>
+                    und die
+                    <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>
+                    gelesen und akzeptiere sie.
+                </span>
+
+            </label>
+
+
+            <label class="check">
+
+                <input
+                    id="r"
+                    type="checkbox"
+                    required
+                >
+
+                <span>
+                    Ich bestätige, dass meine Angaben nach bestem Wissen
+                    korrekt sind.
+                </span>
+
+            </label>
+
+
+            <button
+                class="button primary submit"
+                type="submit"
+            >
+                Angaben bestätigen & E-Mail erstellen →
+            </button>
+
+
+            <p class="hint">
+                Danach öffnet sich dein E-Mail-Programm mit der
+                vorbereiteten Anfrage.
+            </p>
+
+        </form>
+
+    </main>
+
+
+    <script>
+
+f.onsubmit = event => {
+
+    event.preventDefault();
+
+    if (!f.checkValidity()) {
+        f.reportValidity();
+        return;
+    }
+
+// Dies ist ein Kommentar. Deaktivierte Funktion.
+//    let files = [...i.files]
+//        .map(q => q.name)
+//        .join(', ') || 'Keine Bilder';
+
+    let body = `Guten Tag,
+
+ich möchte eine PC-Service-Anfrage stellen.
+
+Name: ${n.value}
+E-Mail: ${e.value}
+Telefon: ${t.value || 'nicht angegeben'}
+PC / Gerät: ${d.value || 'nicht angegeben'}
+
+Problem / Anliegen:
+${p.value}
+
+Weitere Angaben:
+${x.value || 'keine'}
+
+Ausgewählte Bilder:
+[Bilder hier einfügen]
+
+Ich habe die AGB und Datenschutzerklärung akzeptiert und meine Angaben nach bestem Wissen bestätigt.`;
+
+    if (
+        confirm(
+            'Angaben bestätigen\n\n' +
+            'Bitte prüfe deine Eingaben noch einmal. ' +
+            'Mit OK wird die E-Mail erstellt.'
+        )
+    ) {
+
+        location.href =
+            'mailto:kontakt@gh-pc-solutions.de?subject=' +
+            encodeURIComponent(
+                'PC-Service Anfrage von ' + n.value
+            ) +
+            '&body=' +
+            encodeURIComponent(body);
+    }
+};
+
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">
+            GH-PC<span>Solutions</span>
+        </div>
+
+        <div>
+            PC-Reparatur · Service · Hilfe
+        </div>
+
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+
+        <div>
+            © 2026 Georg Heinz. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
